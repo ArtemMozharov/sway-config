@@ -19,6 +19,8 @@ set $term foot
 # Your preferred application launcher
 set $menu rofi -show drun
 set $files nautilus
+set $browser firefox
+set $obsidian flatpak run md.obsidian.Obsidian
 
 ### Output configuration
 #
@@ -88,6 +90,8 @@ input type:keyboard {
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
+    bindsym $mod+Shift+b exec $browser
+    bindsym $mod+Shift+o exec $obsidian
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
@@ -237,6 +241,10 @@ bindsym $mod+Shift+Print exec sh -c 'f="$HOME/Pictures/Screenshots/$(date +%Y-%m
 # WAYBAR
 exec_always pkill waybar; waybar
 
+# Autotiling
+exec_always autotiling -w 1 3 5
+# Automatic monitor configuration
+exec_always kanshi
 # Start clipboard history watcher
 exec_always wl-paste --watch cliphist store
 

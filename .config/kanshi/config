@@ -1,0 +1,3 @@
+profile {
+	output "Chimei Innolux Corporation 0x145A Unknown" enable mode 1920x1200@60.003Hz position 0,0 scale 1.1 transform normal
+}
