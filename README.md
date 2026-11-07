@@ -3,6 +3,12 @@ Prerequisites:
 ```bash
 mkdir -p ~/Pictures/Screenshots
 sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays
+
+#add autotilingthat is applied to workspaces 1, 3 and 5
+mkdir -p ~/.local/bin ~/.config/sway
+curl -fsSL https://raw.githubusercontent.com/nwg-piotr/autotiling/master/autotiling/main.py \
+  -o ~/.local/bin/autotiling
+chmod +x ~/.local/bin/autotiling
 ```
 
 Apply the configs from this repository to your home directory:
