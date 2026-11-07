@@ -1,8 +1,9 @@
-Prerequisites:
+## Prerequisites
 
+Run the following and also Obsidian should be installed
 ```bash
 mkdir -p ~/Pictures/Screenshots
-sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays foot nautilus
+sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays foot nautilus firefox
 
 #add autotilingthat is applied to workspaces 1, 3 and 5
 mkdir -p ~/.local/bin ~/.config/sway
@@ -11,7 +12,9 @@ curl -fsSL https://raw.githubusercontent.com/nwg-piotr/autotiling/master/autotil
 chmod +x ~/.local/bin/autotiling
 ```
 
-Apply the configs from this repository to your home directory:
+
+
+## Apply the configs from this repository to your home directory:
 
 ```bash
 rsync -av .sway/ ~/.sway/
@@ -23,7 +26,7 @@ rsync -av .config/nvim/ ~/.config/nvim/
 rsync -av .vimrc ~/.vimrc
 ```
 
-Update this repository from the configs in your home directory:
+## Update this repository from the configs in your home directory:
 
 ```bash
 rsync -av ~/.sway/ .sway/
