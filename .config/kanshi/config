@@ -1,3 +1,8 @@
 profile {
 	output "Chimei Innolux Corporation 0x145A Unknown" enable mode 1920x1200@60.003Hz position 0,0 scale 1.1 transform normal
 }
+
+profile {
+	output "Chimei Innolux Corporation 0x145A Unknown" enable mode 1920x1200@60.003Hz position 2742,775 scale 1.2 transform normal
+	output "Dell Inc. DELL S2721QS 41DLM43" enable mode 3840x2160@60.000Hz position 0,0 scale 1.4 transform normal
+}
