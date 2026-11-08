@@ -1,0 +1,138 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 4,
+  "modules-left": ["custom/power", "sway/workspaces", "sway/scratchpad", "sway/mode", "custom/media"],
+  "modules-center": ["clock", "custom/keyboard-layout"],
+  "modules-right": [
+    "tray", "idle_inhibitor", "pulseaudio", "network", 
+    "group/system-monitor", "backlight",
+    "custom/power-profile", "battery", "battery#bat2"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": 1, "2": 2, "3": 3, "4": 4, "5": 5,
+      "6": 6, "7": 7, "8": 8, "9": 9, "10": 10
+    }
+  },
+  "sway/mode": {"format": "<span style=\"italic\">{}</span>"},
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "format-icons": {"spotify": "", "default": ""},
+    "exec": "~/.config/waybar/scripts/media-status.sh",
+    "exec-if": "playerctl status >/dev/null 2>&1",
+    "interval": 5,
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "escape": true,
+    "tooltip": false
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {"activated": "󰅶", "deactivated": "󰛊"}
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+    "format-muted": "󰅶 {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": "", "hands-free": "󰂑", "headset": "󰂑",
+      "phone": "", "portable": "", "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-linked": "󰖪",
+    "format-disconnected": "󰖪",
+    "format-disabled": "󰖪",
+    "tooltip-format": "Network interface: {ifname}",
+    "format-alt": "{essid}",
+    "format-alt-click": "click-left",
+    "on-click-right": "nm-connection-editor",
+    "on-double-click": "nm-connection-editor"
+  },
+  "custom/power-profile": {
+    "exec": "~/.config/waybar/scripts/power-profile.sh",
+    "return-type": "json",
+    "interval": 5,
+    "format": "{}",
+    "on-click": "~/.config/waybar/scripts/power-profile.sh --cycle"
+  },
+  "group/system-monitor": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "temperature"]
+  },
+  "cpu": {"format": "{usage}% ", "tooltip": false, "on-click": "gnome-system-monitor"},
+  "memory": {"format": "{}% ", "on-click": "gnome-system-monitor"},
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": ["󰉬", "", "󰉪"],
+    "on-click": "gnome-system-monitor"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "min-brightness": 1
+  },
+  "custom/keyboard-layout": {
+    "exec": "~/.config/waybar/scripts/keyboard-layout.sh",
+    "return-type": "json",
+    "interval": 1,
+    "format": "{}",
+    "tooltip": true
+  },
+  "battery": {
+    "states": {"warning": 30, "critical": 15},
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰃨",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {"bat": "BAT2"},
+  "clock": {
+    "format": "{:%H:%M | %d.%m}",
+    "format-alt": " {:%A, %d %B %Y | KW %V}",
+    "on-double-click": "~/.config/waybar/scripts/swap.sh",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+          "mode": "month",
+          "weeks-pos": "right"
+      }
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
+  }
+}

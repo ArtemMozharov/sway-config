@@ -1,0 +1,72 @@
+@import "colors.css";
+
+* {
+    color: @text;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "Roboto", "Font Awesome 6 Free", FontAwesome, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: alpha(@mantle, 0.94);
+    border-bottom: 2px solid @surface0;
+}
+
+#workspaces, #window, #clock, #custom-power,
+#custom-power-profile, #custom-keyboard-layout, #custom-media, #mpd, #idle_inhibitor,
+#pulseaudio, #network, #cpu, #memory, #temperature, #backlight, #keyboard-state,
+#battery, #tray, #scratchpad {
+    background: @base;
+    margin: 7px 3px;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+
+#workspaces { margin-left: 8px; padding: 3px 7px; }
+#workspaces button {
+    color: @subtext0;
+    padding: 0 7px;
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+}
+#workspaces button.focused { color: @base; background: @lavender; }
+#workspaces button.urgent { color: @red; }
+#workspaces button:hover { color: @lavender; background: @surface0; }
+#window { color: @lavender; }
+#clock { color: @sky; }
+#custom-power { color: @red; margin-right: 8px; }
+#custom-power-profile { color: @green; }
+#custom-power-profile.power-saver { color: @teal; }
+#custom-power-profile.performance { color: @peach; }
+#custom-power-profile.unavailable { color: @red; }
+#custom-keyboard-layout { color: @sky; }
+#custom-media, #mpd { color: @mauve; }
+#idle_inhibitor { color: @yellow; }
+#pulseaudio { color: @teal; }
+#network { color: @blue; }
+#cpu, #memory, #temperature, #backlight, #keyboard-state { color: @subtext0; }
+#system-monitor {
+    background: @base;
+    margin: 7px 3px;
+    padding: 0;
+    border-radius: 10px;
+}
+#system-monitor #cpu, #system-monitor #memory, #system-monitor #temperature {
+    background: transparent;
+    margin: 0;
+    padding: 4px 6px;
+}
+#system-monitor #cpu { padding-left: 10px; }
+#system-monitor #temperature { padding-right: 10px; }
+#battery { color: @green; margin-right: 3px; }
+#battery.warning:not(.charging) { color: @yellow; }
+#battery.critical:not(.charging) { color: @red; }
+#tray { margin-right: 8px; }
+#mode { color: @yellow; }
+menu { background: @mantle; color: @text; border: 1px solid @surface0; border-radius: 10px; }
+menuitem { padding: 6px 12px; }
+menuitem:hover { background: @surface0; color: @lavender; }

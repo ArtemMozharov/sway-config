@@ -30,6 +30,29 @@ set $system-monitor gnome-system-monitor
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg /home/artem/Pictures/Wallpapers/secluded-grove-pixel.png fill
+
+### Appearance (adapted from dotfiles/)
+gaps inner 7
+gaps outer 4
+default_border pixel 3
+focus_follows_mouse no
+smart_borders off
+
+set $base      #1a1b26
+set $mantle    #16161e
+set $text      #c0caf5
+set $blue      #7aa2f7
+set $peach     #ff9e64
+set $overlay0  #565f89
+
+client.focused           $blue     $base        $text      $blue      $blue
+client.focused_inactive  $mantle   $base        $text      $mantle    $mantle
+client.unfocused         $mantle   $base        $text      $mantle    $mantle
+client.urgent            $peach    $base        $peach     $overlay0  $peach
+client.placeholder       $base     $base        $text      $overlay0  $overlay0
+client.background        $base
+
+exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 #
 # Example configuration:
 #
@@ -42,11 +65,12 @@ output * bg /home/artem/Pictures/Wallpapers/secluded-grove-pixel.png fill
 # Example configuration:
 #
 exec swayidle -w \
+          timeout 300 'gtklock' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'gtklock'
 #
-# This turns off displays after 600 seconds of inactivity, turns them back on
-# when resumed, and locks the screen before the computer goes to sleep.
+# This locks the screen after 300 seconds of inactivity, turns off displays
+# after 600 seconds, turns them back on when resumed, and locks before sleep.
 
 ### Input configuration
 #
@@ -240,7 +264,7 @@ bindsym $mod+Shift+Print exec sh -c 'f="$HOME/Pictures/Screenshots/$(date +%Y-%m
 
 
 # WAYBAR
-exec_always pkill waybar; waybar
+exec_always pkill -x waybar; ~/.config/waybar/start.sh
 
 # Autotiling
 exec_always autotiling -w 1 2 3 4 5
