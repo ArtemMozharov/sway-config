@@ -1,10 +1,10 @@
 ## Prerequisites
 
-Run the following and also Obsidian should be installed
+Run the following and also Obsidian and disktree should be installed
 ```bash
 mkdir -p ~/Pictures/Screenshots
 cp secluded-grove-pixel.png $HOME/Pictures/Wallpapers/secluded-grove-pixel.png
-sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays ghostty nautilus firefox gtklock swayidle
+sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays ghostty nautilus firefox gtklock swayidle cargo gnome-system-monitor gnome-disk-utility btop
 
 #add autotiling that is applied to workspaces 1, 3 and 5
 mkdir -p ~/.local/bin ~/.config/sway
