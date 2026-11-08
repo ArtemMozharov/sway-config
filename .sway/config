@@ -35,18 +35,16 @@ output * bg /home/artem/Pictures/Wallpapers/secluded-grove-pixel.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration TODO
+### Idle configuration
 #
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep 'gtklock'
 #
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+# This turns off displays after 600 seconds of inactivity, turns them back on
+# when resumed, and locks the screen before the computer goes to sleep.
 
 ### Input configuration
 #
@@ -92,6 +90,7 @@ input type:keyboard {
 
     bindsym $mod+Shift+b exec $browser
     bindsym $mod+Shift+o exec $obsidian
+    bindsym $mod+z exec gtklock
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #

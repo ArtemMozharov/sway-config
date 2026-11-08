@@ -4,7 +4,7 @@ Run the following and also Obsidian should be installed
 ```bash
 mkdir -p ~/Pictures/Screenshots
 cp secluded-grove-pixel.png $HOME/Pictures/Wallpapers/secluded-grove-pixel.png
-sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays ghostty nautilus firefox gtklock
+sudo dnf install grim slurp swappy wl-clipboard cliphist waybar kanshi nvim tmux vim wdisplays ghostty nautilus firefox gtklock swayidle
 
 #add autotiling that is applied to workspaces 1, 3 and 5
 mkdir -p ~/.local/bin ~/.config/sway
@@ -22,6 +22,7 @@ rsync -av .sway/ ~/.sway/
 rsync -av .config/rofi/ ~/.config/rofi/
 rsync -av .config/tmux/ ~/.config/tmux/
 rsync -av .config/kanshi/ ~/.config/kanshi/
+rsync -av .config/gtklock/ ~/.config/gtklock/
 rsync -av .config/nautilus/ ~/.config/nautilus/
 rsync -av .config/nvim/ ~/.config/nvim/
 rsync -av .vimrc ~/.vimrc
@@ -34,6 +35,7 @@ rsync -av ~/.sway/ .sway/
 rsync -av ~/.config/rofi/ .config/rofi/
 rsync -av ~/.config/tmux/ .config/tmux/
 rsync -av ~/.config/kanshi/ .config/kanshi/
+rsync -av ~/.config/gtklock/ .config/gtklock/
 rsync -av ~/.config/nautilus/ .config/nautilus/
 rsync -av ~/.config/nvim/ .config/nvim/
 rsync -av ~/.vimrc .vimrc
