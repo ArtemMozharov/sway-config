@@ -53,6 +53,7 @@ client.placeholder       $base     $base        $text      $overlay0  $overlay0
 client.background        $base
 
 exec_always gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+exec_always gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark'
 #
 # Example configuration:
 #
