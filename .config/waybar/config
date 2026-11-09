@@ -4,10 +4,10 @@
   "height": 38,
   "spacing": 4,
   "modules-left": ["custom/power", "sway/workspaces", "sway/scratchpad", "sway/mode", "custom/media"],
-  "modules-center": ["clock", "custom/keyboard-layout"],
+  "modules-center": ["tray", "idle_inhibitor","custom/keyboard-layout", "clock"],
   "modules-right": [
-    "tray", "idle_inhibitor", "pulseaudio", "network", 
-    "group/system-monitor", "backlight",
+    "pulseaudio", 
+    "group/system-monitor","network", "backlight",
     "custom/power-profile", "battery", "battery#bat2"
   ],
 
@@ -92,7 +92,7 @@
     "on-click": "gnome-system-monitor"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
+    "format": "{icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
     "min-brightness": 1
   },
