@@ -1,14 +1,14 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 38,
+  "height": 25,
   "spacing": 4,
-  "modules-left": ["custom/power", "sway/workspaces", "sway/scratchpad", "sway/mode", "custom/media"],
-  "modules-center": ["clock", "group/tray", "idle_inhibitor","custom/keyboard-layout"],
+  "modules-left": ["custom/power", "sway/workspaces", "group/scratch", "sway/mode", "custom/media"],
+  "modules-center": ["group/calendar", "group/tray", "idle_inhibitor","custom/keyboard-layout"],
   "modules-right": [
-    "pulseaudio", 
+    "group/sound",
     "group/system-monitor","network", "backlight",
-    "custom/power-profile", "battery", "battery#bat2"
+    "custom/power-profile", "group/battery1"
   ],
 
   "group/tray": {
@@ -28,12 +28,24 @@
     }
   },
   "sway/mode": {"format": "<span style=\"italic\">{}</span>"},
-  "sway/scratchpad": {
-    "format": "{icon} {count}",
+  "group/scratch": {
+    "orientation": "horizontal",
+    "modules": ["sway/scratchpad#icon", "sway/scratchpad#count"]
+  },
+  "sway/scratchpad#icon": {
+    "format": "{icon}",
     "show-empty": false,
     "format-icons": ["", ""],
+    "justify": "center",
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
+  },
+  "sway/scratchpad#count": {
+    "format": "{count}",
+    "show-empty": false,
+    "format-icons": ["", ""],
+    "justify": "center",
+    "tooltip": false
   },
   "custom/media": {
     "format": "{icon} {text}",
@@ -51,18 +63,31 @@
     "format": "{icon}",
     "format-icons": {"activated": "󰅶", "deactivated": "󰛊"}
   },
-  "pulseaudio": {
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰅶 {icon} {format_source}",
-    "format-muted": "󰅶 {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+  "group/sound": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#sound-icon", "pulseaudio#sound-value"]
+  },
+  "pulseaudio#sound-icon": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "󰅶",
+    "format-muted": "󰅶",
     "format-icons": {
       "headphones": "", "hands-free": "󰂑", "headset": "󰂑",
       "phone": "", "portable": "", "car": "",
       "default": ["", "", ""]
     },
+    "justify": "center",
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#sound-value": {
+    "format": "{volume}% {format_source}",
+    "format-bluetooth": "{volume}% {format_source}",
+    "format-bluetooth-muted": "{volume}% {format_source}",
+    "format-muted": "{volume}% {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "justify": "center",
     "on-click": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
@@ -88,10 +113,11 @@
   },
   "group/system-monitor": {
     "orientation": "horizontal",
-    "modules": ["cpu", "memory", "temperature"]
+    "modules": ["cpu", "memory#memory-icon", "memory#memory-value", "temperature"]
   },
   "cpu": {"format": "{usage}% ", "tooltip": false, "on-click": "gnome-system-monitor"},
-  "memory": {"format": "{}% ", "on-click": "gnome-system-monitor"},
+  "memory#memory-icon": {"format": "", "justify": "center", "on-click": "gnome-system-monitor"},
+  "memory#memory-value": {"format": "{}%", "justify": "center", "on-click": "gnome-system-monitor"},
   "temperature": {
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
@@ -110,19 +136,32 @@
     "format": "{}",
     "tooltip": true
   },
-  "battery": {
-    "states": {"warning": 30, "critical": 15},
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰃨",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+  "group/battery1": {
+    "orientation": "horizontal",
+    "modules": ["battery#bat1-icon", "battery#bat1-value"]
   },
-  "battery#bat2": {"bat": "BAT2"},
+  "battery#bat1-icon": {
+    "states": {"warning": 30, "critical": 15},
+    "format": "{icon}", "format-full": "{icon}",
+    "format-charging": "󰃨", "format-plugged": "",
+    "format-icons": ["", "", "", "", ""],
+    "justify": "center"
+  },
+  "battery#bat1-value": {
+    "states": {"warning": 30, "critical": 15},
+    "format": "{capacity}%", "format-full": "{capacity}%",
+    "format-charging": "{capacity}%", "format-plugged": "{capacity}%",
+    "justify": "center"
+  },
+  "group/calendar": {
+    "orientation": "horizontal",
+    "modules": ["custom/calendar-icon", "clock"]
+  },
+  "custom/calendar-icon": {"format": "", "tooltip": false, "justify": "center"},
   "clock": {
     "format": "{:%H:%M | %d.%m}",
-    "format-alt": " {:%A, %d %B %Y | KW %V}",
+    "format-alt": "{:%A, %d %B %Y | KW %V}",
+    "justify": "center",
     "on-double-click": "~/.config/waybar/scripts/swap.sh",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {

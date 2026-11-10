@@ -6,39 +6,77 @@
     border-radius: 0;
     min-height: 0;
     font-family: "JetBrains Mono", monospace;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    margin-top: 1px;
-    margin-bottom: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 window#waybar {
-    background: alpha(@mantle, 0.97);
+    background: alpha(@mantle, 0.92);
     border-bottom: 2px solid @surface0;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
 }
 
-#custom-power-profile, #custom-power, #scratchpad, #backlight, #tray, #custom-tray-toggle, #idle_inhibitor, #network {
-  font-size: 25px;
+#custom-power-profile, #custom-power, #backlight, #tray, #custom-tray-toggle, #idle_inhibitor, #network,
+#pulseaudio.sound-icon, #memory.memory-icon, #battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon {
+  font-size: 23px;
 }
 
-#workspaces, #window, #clock, #custom-power,
+#pulseaudio.sound-icon, #pulseaudio.sound-value,
+#battery.bat1-icon, #battery.bat1-value,
+#custom-calendar-icon, #clock {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 4px;
+}
+
+#workspaces, #window, #custom-power,
+#sound, #battery1, #battery2, #calendar,
 #custom-power-profile, #custom-keyboard-layout, #custom-media, #mpd, #idle_inhibitor,
-#pulseaudio, #network, #system-monitor, #backlight, #keyboard-state,
-#battery, #tray, #scratchpad {
+#network, #system-monitor, #backlight, #keyboard-state,
+#tray {
     background: @base;
-    margin: 5px;
+    margin: 0 4px;
     padding: 0 12px;
     border-radius: 10px;
     border: 1px solid @surface1;
 }
+#custom-calendar-icon {color: @sky;}
+#scratch {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 4px;
+}
 
-#workspaces { margin-left: 4px; padding: 5px 7px; }
+#scratchpad.icon, #scratchpad.count {
+    background: @base;
+    border: 1px solid @surface1;
+    margin: 0;
+}
+#scratchpad.icon {
+    border-width: 1px 0 1px 1px;
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+    padding-right: 4px;
+}
+#scratchpad.count {
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 10px 10px 0;
+    padding-right: 10px;
+    padding-left: 4px;
+}
+
+#workspaces { padding: 4px; }
 #workspaces button {
     color: @subtext0;
-    padding: 2px 4px;
-    border-radius: 8px;
-    margin: 0 7px;
+    padding: 0;
+    border-radius: 6px;
+    margin: 0 4px;
     background: transparent;
     box-shadow: none;
     text-shadow: none;
@@ -46,14 +84,13 @@ window#waybar {
 #workspaces button.focused { 
   color: @base;
   background: @lavender; 
-  padding: 2px 10px; 
-  font-size: 17px;
+  padding: 0 12px; 
 }
 #workspaces button.urgent { color: @red; }
 #workspaces button:hover { color: @lavender; background: @surface0; }
 #window { color: @lavender; }
 #clock { color: @sky; }
-#custom-power { color: @red; margin-right: 8px; }
+#custom-power { color: @red;}
 #custom-power-profile { color: @green; }
 #custom-power-profile.power-saver { color: @teal; }
 #custom-power-profile.performance { color: @peach; }
@@ -67,10 +104,10 @@ window#waybar {
 #system-monitor #cpu, #system-monitor #memory, #system-monitor #temperature {
     background: transparent;
     margin: 2px;
-    padding: 4px 6px;
+    padding: 2px 4px;
 }
-#system-monitor #cpu { padding-left: 10px; }
-#system-monitor #temperature { padding-right: 10px; }
+#system-monitor #cpu { padding-left: 8px; }
+#system-monitor #temperature { padding-right: 8px; }
 #battery { color: @green; margin-right: 3px; }
 #battery.warning:not(.charging) { color: @yellow; }
 #battery.critical:not(.charging) { color: @red; }
@@ -78,6 +115,6 @@ window#waybar {
   color: @lavender;
 }
 #mode { color: @yellow; }
-menu { background: @mantle; color: @text; border: 1px solid @surface0; border-radius: 10px; }
-menuitem { padding: 6px 12px; }
-menuitem:hover { background: @surface0; color: @lavender; }
+menu { background: alpha(@mantle, 0.85); color: @text; border: 1px solid @surface0; border-radius: 10px; }
+menuitem { padding: 2px 8px; }
+menuitem:hover { background: alpha(@surface0, 0.92); color: @lavender; }
