@@ -4,13 +4,20 @@
   "height": 38,
   "spacing": 4,
   "modules-left": ["custom/power", "sway/workspaces", "sway/scratchpad", "sway/mode", "custom/media"],
-  "modules-center": ["tray", "idle_inhibitor","custom/keyboard-layout", "clock"],
+  "modules-center": ["clock", "group/tray", "idle_inhibitor","custom/keyboard-layout"],
   "modules-right": [
     "pulseaudio", 
     "group/system-monitor","network", "backlight",
     "custom/power-profile", "battery", "battery#bat2"
   ],
 
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {"click-to-reveal": true, "transition-duration": 200},
+    "modules": ["custom/tray-toggle", "tray"]
+  },
+  "custom/tray-toggle": {"format": "󰍜", "tooltip": false},
+  "tray": {"spacing": 8},
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,

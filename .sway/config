@@ -29,14 +29,14 @@ set $system-monitor gnome-system-monitor
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/artem/Pictures/Wallpapers/secluded-grove-pixel.png fill
+output * bg /home/artem/Pictures/Wallpapers/current.png fill
 
 ### Appearance (adapted from dotfiles/)
 gaps inner 7
 gaps outer 4
 default_border pixel 3
-focus_follows_mouse no
-smart_borders off
+focus_follows_mouse yes
+smart_borders on
 
 set $base      #1a1b26
 set $mantle    #16161e
