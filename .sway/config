@@ -17,7 +17,7 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 # Your preferred application launcher
-set $menu rofi -show combi
+set $menu rofi -show drun
 set $files nautilus
 set $browser firefox
 set $obsidian flatpak run md.obsidian.Obsidian

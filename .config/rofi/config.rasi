@@ -4,12 +4,10 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "combi,drun,run,,clipboard:~/.config/rofi/scripts/clipboard.sh,ssh,window,filebrowser";
-	combi-modi:                 "window,drun,run,filebrowser";
+	modi:                       "drun,run,clipboard:~/.config/rofi/scripts/clipboard.sh,ssh,window,filebrowser";
     show-icons:                 true;
-    display-combi:              "";
     display-clipboard:          "";
-    display-drun:               "";
+    display-drun:               "";
     display-run:                "";
     display-ssh:                "";
     display-window:             "";
