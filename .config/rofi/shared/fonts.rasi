@@ -3,6 +3,6 @@
 /* Text Font */
 
 * {
-    font: "Fira Sans Bold 12";
+    font: "JetBrains Mono Bold 12";
 }
 

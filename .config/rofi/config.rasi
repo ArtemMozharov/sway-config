@@ -7,13 +7,13 @@ configuration {
 	modi:                       "combi,drun,run,,clipboard:~/.config/rofi/scripts/clipboard.sh,ssh,window,filebrowser";
 	combi-modi:                 "window,drun,run,filebrowser";
     show-icons:                 true;
-    display-combi:              "search";
-    display-clipboard:          "clipboard";
-    display-drun:               "drun";
-    display-run:                "run";
-    display-ssh:                "ssh";
-    display-window:             "win";
-	display-filebrowser:        "files";
+    display-combi:              "";
+    display-clipboard:          "";
+    display-drun:               "";
+    display-run:                "";
+    display-ssh:                "";
+    display-window:             "";
+	display-filebrowser:        "";
 	drun-display-format:        "{name}";
 
 }
@@ -203,6 +203,7 @@ mode-switcher{
 }
 button {
     expand:                      false;
+    font:                        "Font Awesome 7 Free Solid 12";
     padding:                     15px;
     border-radius:               10px;
     background-color:            @background-alt;
