@@ -98,10 +98,8 @@
     "format-linked": "󰖪",
     "format-disconnected": "󰖪",
     "format-disabled": "󰖪",
-    "tooltip-format": "Network interface: {ifname}",
-    "format-alt": "{essid}",
-    "format-alt-click": "click-left",
-    "on-click-right": "nm-connection-editor",
+    "tooltip-format": "{essid}",
+    "on-click": "nm-connection-editor",
     "on-double-click": "nm-connection-editor"
   },
   "custom/power-profile": {
