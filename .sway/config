@@ -17,7 +17,7 @@ set $right l
 # Your preferred terminal emulator
 set $term ghostty
 # Your preferred application launcher
-set $menu rofi -show drun
+set $menu rofi -show combi
 set $files nautilus
 set $browser firefox
 set $obsidian flatpak run md.obsidian.Obsidian
@@ -84,9 +84,9 @@ input type:touchpad {
      middle_emulation enabled
  }
 
-# Three-finger horizontal swipes switch workspaces.
-bindgesture swipe:3:left workspace next
-bindgesture swipe:3:right workspace prev
+# Four-finger horizontal swipes switch workspaces.
+bindgesture swipe:4:left workspace next
+bindgesture swipe:4:right workspace prev
 bindgesture swipe:3:up exec $menu
 bindgesture swipe:3:down exec pkill -x rofi
 
@@ -281,7 +281,7 @@ exec_always kanshi
 exec_always wl-paste --watch cliphist store
 
 # Open clipboard history with Rofi
-bindsym $mod+ctrl+v exec cliphist list | rofi -dmenu -p "Clipboard" | cliphist decode | wl-copy
+bindsym $mod+ctrl+v exec rofi -show clipboard
 
 # Clear clipboard history
 # bindsym $mod+Shift+Delete exec cliphist wipe
