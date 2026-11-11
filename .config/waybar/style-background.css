@@ -19,11 +19,14 @@ window#waybar {
 }
 
 #custom-power-profile, #custom-power, #backlight, #tray, #custom-tray-toggle, #idle_inhibitor, #network,
-#pulseaudio.sound-icon, #memory.memory-icon, #battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon {
+#pulseaudio.sound-icon, #pulseaudio.mic-icon, #memory.memory-icon,
+#cpu.cpu-icon, #temperature.temperature-icon,
+#battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon {
   font-size: 23px;
 }
 
-#pulseaudio.sound-icon, #pulseaudio.sound-value,
+#pulseaudio.sound-icon, #pulseaudio.sound-value, #pulseaudio.mic-icon,
+#cpu.cpu-icon, #cpu.cpu-value, #temperature.temperature-icon, #temperature.temperature-value,
 #battery.bat1-icon, #battery.bat1-value,
 #custom-calendar-icon, #clock {
     background: transparent;
@@ -111,6 +114,20 @@ window#waybar {
     background: transparent;
     margin: 2px;
     padding: 2px 4px;
+}
+#system-monitor #cpu.cpu-icon,
+#system-monitor #memory.memory-icon,
+#system-monitor #temperature.temperature-icon {
+    padding-right: 1px;
+}
+#system-monitor #cpu.cpu-value,
+#system-monitor #memory.memory-value,
+#system-monitor #temperature.temperature-value {
+    padding-left: 1px;
+}
+#system-monitor #cpu.cpu-value,
+#system-monitor #memory.memory-value {
+    padding-right: 12px;
 }
 #system-monitor #cpu { padding-left: 8px; }
 #system-monitor #temperature { padding-right: 8px; }

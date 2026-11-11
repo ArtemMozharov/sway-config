@@ -36,7 +36,7 @@ gaps inner 7
 gaps outer 4
 default_border pixel 3
 focus_follows_mouse yes
-smart_borders on
+smart_borders off
 
 set $base      #1a1b26
 set $mantle    #16161e
@@ -83,6 +83,12 @@ input type:touchpad {
      natural_scroll enabled
      middle_emulation enabled
  }
+
+# Three-finger horizontal swipes switch workspaces.
+bindgesture swipe:3:left workspace next
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:up exec $menu
+bindgesture swipe:3:down exec pkill -x rofi
 
 input type:keyboard {
     xkb_layout de,us,ua,ru

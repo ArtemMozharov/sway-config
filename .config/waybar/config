@@ -65,7 +65,7 @@
   },
   "group/sound": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio#sound-icon", "pulseaudio#sound-value"]
+    "modules": ["pulseaudio#sound-icon", "pulseaudio#sound-value", "pulseaudio#mic-icon"]
   },
   "pulseaudio#sound-icon": {
     "format": "{icon}",
@@ -81,16 +81,21 @@
     "on-click": "pavucontrol"
   },
   "pulseaudio#sound-value": {
-    "format": "{volume}% {format_source}",
-    "format-bluetooth": "{volume}% {format_source}",
-    "format-bluetooth-muted": "{volume}% {format_source}",
-    "format-muted": "{volume}% {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}%",
+    "format-bluetooth-muted": "{volume}%",
+    "format-muted": "{volume}%",
     "justify": "center",
     "on-click": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  "pulseaudio#mic-icon": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "justify": "center",
+    "on-click": "pavucontrol"
   },
   "network": {
     "format-wifi": "",
@@ -111,15 +116,24 @@
   },
   "group/system-monitor": {
     "orientation": "horizontal",
-    "modules": ["cpu", "memory#memory-icon", "memory#memory-value", "temperature"]
+    "modules": ["cpu#cpu-icon", "cpu#cpu-value", "memory#memory-icon", "memory#memory-value", "temperature#temperature-icon", "temperature#temperature-value"]
   },
-  "cpu": {"format": "{usage}% ", "tooltip": false, "on-click": "gnome-system-monitor"},
+  "cpu#cpu-icon": {"format": "", "justify": "center", "tooltip": false, "on-click": "gnome-system-monitor"},
+  "cpu#cpu-value": {"format": "{usage}%", "justify": "center", "tooltip": false, "on-click": "gnome-system-monitor"},
   "memory#memory-icon": {"format": "", "justify": "center", "on-click": "gnome-system-monitor"},
   "memory#memory-value": {"format": "{}%", "justify": "center", "on-click": "gnome-system-monitor"},
-  "temperature": {
+  "temperature#temperature-icon": {
     "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
+    "format": "{icon}",
     "format-icons": ["󰉬", "", "󰉪"],
+    "tooltip": false,
+    "justify": "center",
+    "on-click": "gnome-system-monitor"
+  },
+  "temperature#temperature-value": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C",
+    "justify": "center",
     "on-click": "gnome-system-monitor"
   },
   "backlight": {
