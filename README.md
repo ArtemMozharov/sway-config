@@ -66,20 +66,3 @@ If the bar still does not appear, start it from a terminal inside Sway to see st
 ```bash
 ~/.config/waybar/start.sh
 ```
-
-## Update this repository from the configs in your home directory:
-
-```bash
-rsync -av ~/.sway/ .sway/
-rsync -av ~/.config/rofi/ .config/rofi/
-rsync -av ~/.config/waybar/ .config/waybar/
-rsync -av ~/.config/theme/ .config/theme/
-rsync -av ~/.config/ghostty/ .config/ghostty/
-rsync -av ~/.config/gtk-3.0/ .config/gtk-3.0/
-rsync -av ~/.config/tmux/ .config/tmux/
-rsync -av ~/.config/kanshi/ .config/kanshi/
-rsync -av ~/.config/gtklock/ .config/gtklock/
-rsync -av ~/.config/nautilus/ .config/nautilus/
-rsync -av ~/.config/nvim/ .config/nvim/
-rsync -av ~/.vimrc .vimrc
-```
