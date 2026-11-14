@@ -43,7 +43,7 @@ window#waybar {
 #tray {
     background: @base;
     margin: 0 4px;
-    padding: 0 12px;
+    padding: 0 4px;
     border-radius: 10px;
     border: 1px solid @surface1;
 }
@@ -51,7 +51,7 @@ window#waybar {
 #tray *, #tray .active, #tray .passive, #tray .needs-attention {
     border: none;
     box-shadow: none;
-    padding: 0 4px;
+    padding: 0;
 }
 #custom-calendar-icon {color: @sky;}
 #scratch {

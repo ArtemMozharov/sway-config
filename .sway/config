@@ -119,7 +119,7 @@ input type:keyboard {
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     bindsym $mod+Shift+b exec $browser
     bindsym $mod+Shift+o exec $obsidian
@@ -274,14 +274,14 @@ bindsym $mod+Shift+Print exec sh -c 'f="$HOME/Pictures/Screenshots/$(date +%Y-%m
 exec_always pkill -x waybar; ~/.config/waybar/start.sh
 
 # Autotiling
-exec_always autotiling -w 1 2 3 4 5
+exec_always autotiling -w 1 2 3 4 5 6 7 8 9
 # Automatic monitor configuration
 exec_always kanshi
 # Start clipboard history watcher
 exec_always wl-paste --watch cliphist store
 
 # Open clipboard history with Rofi
-bindsym $mod+ctrl+v exec rofi -show clipboard
+bindsym $mod+Shift+v exec rofi -show clipboard
 
 # Clear clipboard history
-# bindsym $mod+Shift+Delete exec cliphist wipe
+bindsym $mod+Shift+Delete exec cliphist wipe
