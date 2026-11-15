@@ -1,11 +1,12 @@
 ## Prerequisites
 
-Run the following and also Obsidian and disktree should be installed
+Run the following and also Obsidian, bm-sidebar, nm-sidebar should be installed
 ```bash
 mkdir -p ~/Pictures/Screenshots
 cp current.png $HOME/Pictures/Wallpapers/current.png
 sudo dnf install grim slurp swappy wl-clipboard cliphist wtype waybar kanshi nvim tmux vim wdisplays ghostty nautilus firefox gtklock swayidle cargo gnome-system-monitor gnome-disk-utility btop fontawesome-6-free-fonts cascadia-code-nf-fonts google-roboto-fonts pavucontrol nm-connection-editor nm-connection-editor-desktop tuned-ppd playerctl brightnessctl
 sudo dnf install sassc gtk-murrine-engine gnome-themes-extra
+sudo dnf install bluejay
 
 #add autotiling that is applied to workspaces 1-5
 mkdir -p ~/.local/bin ~/.config/sway

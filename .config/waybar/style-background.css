@@ -21,7 +21,7 @@ window#waybar {
 #custom-power-profile, #custom-power, #backlight, #tray, #custom-tray-toggle, #idle_inhibitor, #network,
 #pulseaudio.sound-icon, #pulseaudio.mic-icon, #memory.memory-icon,
 #cpu.cpu-icon, #temperature.temperature-icon,
-#battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon {
+#battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon, #bluetooth{
   font-size: 23px;
 }
 
@@ -39,7 +39,7 @@ window#waybar {
 #workspaces, #window, #custom-power,
 #sound, #battery1, #battery2, #calendar,
 #custom-power-profile, #custom-keyboard-layout, #custom-media, #mpd, #idle_inhibitor,
-#network, #system-monitor, #backlight, #keyboard-state,
+#network, #bluetooth, #system-monitor, #backlight, #keyboard-state,
 #tray {
     background: @base;
     margin: 0 4px;
@@ -51,7 +51,7 @@ window#waybar {
 #tray *, #tray .active, #tray .passive, #tray .needs-attention {
     border: none;
     box-shadow: none;
-    padding: 0;
+    padding: 0 4px;
 }
 #custom-calendar-icon {color: @sky;}
 #scratch {
@@ -108,7 +108,8 @@ window#waybar {
 #custom-media, #mpd { color: @mauve; }
 #idle_inhibitor { color: @yellow; }
 #pulseaudio { color: @teal; }
-#network { color: @blue; }
+#network { color: @yellow; }
+#bluetooth { color: @blue; }
 #cpu, #memory, #temperature, #backlight, #keyboard-state { color: @subtext0; }
 #system-monitor #cpu, #system-monitor #memory, #system-monitor #temperature {
     background: transparent;
