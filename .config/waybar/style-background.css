@@ -43,7 +43,7 @@ window#waybar {
 #tray {
     background: @base;
     margin: 0 4px;
-    padding: 0 4px;
+    padding: 0 9px;
     border-radius: 10px;
     border: 1px solid @surface1;
 }

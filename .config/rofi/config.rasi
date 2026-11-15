@@ -72,10 +72,11 @@ prompt {
     text-color:                  inherit;
 }
 textbox-prompt-colon {
+    font:                        "JetBrains Mono Bold 15";
     enabled:                     true;
     padding:                     0px;
     expand:                      false;
-    str:                         " ";
+    str:                         " ";
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -200,8 +201,8 @@ mode-switcher{
     text-color:                  @foreground;
 }
 button {
+    font:                        "Font Awesome 7 Free Solid 14";
     expand:                      false;
-    font:                        "Font Awesome 7 Free Solid 12";
     padding:                     15px;
     border-radius:               10px;
     background-color:            @background-alt;
