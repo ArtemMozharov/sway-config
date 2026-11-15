@@ -11,7 +11,7 @@ Install the applications and command-line tools used by the configs:
 ```bash
 sudo dnf install \
   sway swayidle waybar rofi kanshi \
-  grim slurp swappy wl-clipboard cliphist wtype \
+  grim slurp swappy wl-clipboard cliphist wtype ImageMagick \
   ghostty nautilus firefox \
   nvim tmux vim \
   gtklock wdisplays \
@@ -73,7 +73,7 @@ rsync -av .config/nvim/ ~/.config/nvim/
 cp .vimrc ~/.vimrc
 ```
 
-The Sway configuration currently points to `/$HOME/Wallpapers/current.png`.
+Waybar's wallpaper button cycles through image files in `~/Pictures/Wallpapers` (left-click next, right-click previous). Sway remembers the selected image across reloads, and each selection generates a blurred gtklock background with a 70% Tokyo Night base-color overlay. ImageMagick is used for that generated lockscreen image.
 
 ## Install the GTK theme
 

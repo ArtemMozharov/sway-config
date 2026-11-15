@@ -26,10 +26,9 @@ set $system-monitor gnome-system-monitor
 
 ### Output configuration
 #
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+# Wallpaper selection and gtklock background generation.
 
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /$HOME/Pictures/Wallpapers/current.png fill
+exec_always ~/.config/waybar/scripts/wallpaper.sh apply
 
 ### Appearance (adapted from dotfiles/)
 gaps inner 7

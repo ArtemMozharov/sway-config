@@ -21,7 +21,7 @@ window#waybar {
 #custom-power-profile, #custom-power, #backlight, #tray, #custom-tray-toggle, #idle_inhibitor, #network,
 #pulseaudio.sound-icon, #pulseaudio.mic-icon, #memory.memory-icon,
 #cpu.cpu-icon, #temperature.temperature-icon,
-#battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon, #bluetooth{
+#battery.bat1-icon, #custom-calendar-icon, #scratchpad.icon, #bluetooth, #custom-wallpaper{
   font-size: 23px;
 }
 
@@ -40,7 +40,7 @@ window#waybar {
 #sound, #battery1, #battery2, #calendar,
 #custom-power-profile, #custom-keyboard-layout, #custom-media, #mpd, #idle_inhibitor,
 #network, #bluetooth, #system-monitor, #backlight, #keyboard-state,
-#tray {
+#tray, #custom-wallpaper {
     background: @base;
     margin: 0 4px;
     padding: 0 9px;
@@ -110,6 +110,7 @@ window#waybar {
 #pulseaudio { color: @teal; }
 #network { color: @yellow; }
 #bluetooth { color: @blue; }
+#bluetooth { color: @green; }
 #cpu, #memory, #temperature, #backlight, #keyboard-state { color: @subtext0; }
 #system-monitor #cpu, #system-monitor #memory, #system-monitor #temperature {
     background: transparent;
