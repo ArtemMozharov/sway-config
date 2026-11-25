@@ -1,0 +1,53 @@
+@import url("../theme/tokyonight.css");
+
+* {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", monospace;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+window {
+    background-color: alpha(@mantle, 0.88);
+}
+
+button {
+    color: @text;
+    background-color: @base;
+    background-image: none;
+    border: 1px solid @surface1;
+    border-radius: 14px;
+    box-shadow: none;
+    margin: 3px;
+    min-width: 90px;
+    min-height: 52px;
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+button:hover{
+    color: @text;
+    background-color: @surface0;
+    border-color: @lavender;
+    box-shadow: 0 0 0 1px @lavender;
+}
+
+button#lock:hover {
+    border-color: @sky;
+    box-shadow: 0 0 0 1px @sky;
+}
+
+button#suspend:hover {
+    border-color: @teal;
+    box-shadow: 0 0 0 1px @teal;
+}
+
+button#reboot:hover {
+    border-color: @yellow;
+    box-shadow: 0 0 0 1px @yellow;
+}
+
+button#logout:hover
+button#shutdown:focus {
+    color: @red;
+    border-color: @red;
+    box-shadow: 0 0 0 1px @red;
+}

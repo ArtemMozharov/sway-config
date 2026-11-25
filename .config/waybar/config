@@ -70,16 +70,16 @@
   },
   "pulseaudio#sound-icon": {
     "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-bluetooth-muted": "󰅶",
-    "format-muted": "󰅶",
+    "format-bluetooth": "{icon} ",
+    "format-bluetooth-muted": "󰖁 ",
+    "format-muted": "󰖁",
     "format-icons": {
       "headphones": "", "hands-free": "󰂑", "headset": "󰂑",
       "phone": "", "portable": "", "car": "",
-      "default": ["", "", ""]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "justify": "center",
-    "on-click": "pavucontrol"
+    "on-click": "flatpak run com.saivert.pwvucontrol"
   },
   "pulseaudio#sound-value": {
     "format": "{volume}%",
@@ -87,7 +87,7 @@
     "format-bluetooth-muted": "{volume}%",
     "format-muted": "{volume}%",
     "justify": "center",
-    "on-click": "pavucontrol",
+    "on-click": "flatpak run com.saivert.pwvucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
   },
@@ -96,7 +96,7 @@
     "format-source": "",
     "format-source-muted": "",
     "justify": "center",
-    "on-click": "pavucontrol"
+    "on-click": "flatpak run com.saivert.pwvucontrol"
   },
   "network": {
     "format-wifi": "",
@@ -138,9 +138,9 @@
     "orientation": "horizontal",
     "modules": ["cpu#cpu-icon", "cpu#cpu-value", "memory#memory-icon", "memory#memory-value", "temperature#temperature-icon", "temperature#temperature-value"]
   },
-  "cpu#cpu-icon": {"format": "", "justify": "center", "tooltip": false, "on-click": "gnome-system-monitor"},
+  "cpu#cpu-icon": {"format": "󰻠", "justify": "center", "tooltip": false, "on-click": "gnome-system-monitor"},
   "cpu#cpu-value": {"format": "{usage}%", "justify": "center", "tooltip": false, "on-click": "gnome-system-monitor"},
-  "memory#memory-icon": {"format": "", "justify": "center", "on-click": "gnome-system-monitor"},
+  "memory#memory-icon": {"format": "󰍛", "justify": "center", "on-click": "gnome-system-monitor"},
   "memory#memory-value": {"format": "{}%", "justify": "center", "on-click": "gnome-system-monitor"},
   "temperature#temperature-icon": {
     "critical-threshold": 80,
@@ -184,8 +184,8 @@
   "battery#bat1-icon": {
     "states": {"warning": 30, "critical": 15},
     "format": "{icon}", "format-full": "{icon}",
-    "format-charging": "󰃨", "format-plugged": "",
-    "format-icons": ["", "", "", "", ""],
+    "format-charging": "󰂄", "format-plugged": "󰚥",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "justify": "center"
   },
   "battery#bat1-value": {
@@ -213,12 +213,6 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "systemctl shutdown",
-      "reboot": "systemctl reboot",
-      "suspend": "systemctl suspend",
-    }
+    "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css"
   }
 }

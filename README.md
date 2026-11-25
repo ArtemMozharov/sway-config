@@ -16,7 +16,7 @@ sudo dnf install \
   nvim tmux vim \
   gtklock wdisplays \
   gnome-system-monitor gnome-disk-utility btop \
-  pavucontrol playerctl brightnessctl \
+  wlogout playerctl brightnessctl \
   nm-connection-editor nm-connection-editor-desktop \
   tuned-ppd bluejay \
   sassc gtk-murrine-engine gnome-themes-extra \
@@ -50,6 +50,7 @@ These items are not installed by the DNF command above:
   Make sure `~/.local/bin` is on your `PATH`.
 - **`nm-sidebar`** — the Waybar network button uses [Relz/network-manager-sidebar](https://github.com/Relz/network-manager-sidebar). Install its Fedora RPM from the project's Releases page.
 - **`bm-sidebar`** — the Waybar Bluetooth button uses this GTK Bluetooth sidebar. See its [upstream package page](https://atoll.seafoam-labs.org/package/bm-sidebar) for source and installation options.
+- **pwvucontrol** — install from Flathub. Waybar launches it with `flatpak run com.saivert.pwvucontrol`.
 
 ## Install the dotfiles
 
@@ -63,6 +64,7 @@ mkdir -p ~/.config
 rsync -av .sway/ ~/.sway/
 rsync -av .config/rofi/ ~/.config/rofi/
 rsync -av .config/waybar/ ~/.config/waybar/
+rsync -av .config/wlogout/ ~/.config/wlogout/
 rsync -av .config/theme/ ~/.config/theme/
 rsync -av .config/ghostty/ ~/.config/ghostty/
 rsync -av .config/gtk-3.0/ ~/.config/gtk-3.0/
@@ -91,9 +93,9 @@ The upstream repository is archived. The `--libadwaita` option also installs GTK
 
 Log into a Sway session. To apply later config changes, reload Sway with `Mod+Shift+r`.
 
-Waybar uses the shared Tokyo Night palette from `.config/theme/tokyonight.css`; Rofi, Sway, Ghostty, and tmux use matching colors in their native config formats. Neovim installs its plugins on first launch. Waybar's clock toggles between transparent and solid bar backgrounds when double-clicked.
+Waybar and wlogout use the shared Tokyo Night palette from `.config/theme/tokyonight.css`; Rofi, Sway, Ghostty, and tmux use matching colors in their native config formats. Neovim installs its plugins on first launch. Waybar's clock toggles between transparent and solid bar backgrounds when double-clicked.
 
-The Waybar network icon opens `nm-sidebar`; right-click opens `nm-connection-editor`. The Bluetooth icon opens `bm-sidebar`; right-click opens `bluejay`. Other controls include media playback, volume and microphone, brightness, power profiles, battery, keyboard layout, and an idle inhibitor. Clicking CPU, memory, or temperature opens GNOME System Monitor.
+The Waybar network icon opens `nm-sidebar`; right-click opens `nm-connection-editor`. The Bluetooth icon opens `bm-sidebar`; right-click opens `bluejay`. Clicking the sound icon, volume, or microphone launches pwvucontrol through Flatpak; the sound icon reflects output level and mute state. The power button and Super+Escape open the Tokyo Night wlogout menu, with lock, logout, suspend, hibernate, reboot, and shutdown actions, using the layout and stylesheet in `~/.config/wlogout`. Other controls include media playback, brightness, power profiles, battery, keyboard layout, and an idle inhibitor. Clicking CPU, memory, or temperature opens GNOME System Monitor.
 
 Sway locks after five idle minutes, turns off displays after ten minutes, and locks before sleep. The keyboard indicator follows the active layout (`DE`, `US`, `UKR`, or `RU`). 
 
