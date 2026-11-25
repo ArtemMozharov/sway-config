@@ -280,7 +280,7 @@ exec_always kanshi
 exec_always wl-paste --watch cliphist store
 
 # Open clipboard history with Rofi
-bindsym $mod+Shift+v exec rofi -show clipboard
+bindsym $mod+ctrl+v exec rofi -show clipboard
 
 # Clear clipboard history
 bindsym $mod+Shift+Delete exec cliphist wipe
