@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    background: alpha(@mantle, 0.85);
+    background: alpha(@mantle, 0.92);
     border-bottom: 2px solid @surface0;
     padding-bottom: 4px;
 }
