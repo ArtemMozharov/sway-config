@@ -213,6 +213,6 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "on-click": "wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css"
+    "on-click": "sh -c 'pgrep -x wlogout >/dev/null || wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css'"
   }
 }

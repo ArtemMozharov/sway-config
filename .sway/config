@@ -123,7 +123,7 @@ input type:keyboard {
     bindsym $mod+Shift+b exec $browser
     bindsym $mod+Shift+o exec $obsidian
     bindsym $mod+z exec gtklock
-    bindsym $mod+Escape exec wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css
+    bindsym $mod+Escape exec sh -c 'pgrep -x wlogout >/dev/null || wlogout --layout ~/.config/wlogout/layout --css ~/.config/wlogout/style.css'
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
