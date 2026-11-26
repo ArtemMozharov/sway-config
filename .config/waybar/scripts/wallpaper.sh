@@ -47,7 +47,7 @@ case "${1:---status}" in
       basename -- "${wallpapers[0]}"
     fi
     ;;
-  --next|--previous|apply)
+  --next|--previous|apply|--set)
     read_current
     current_index=-1
     for i in "${!wallpapers[@]}"; do
@@ -57,7 +57,17 @@ case "${1:---status}" in
       fi
     done
 
-    if [[ "${1:-}" == "apply" ]]; then
+    if [[ "${1:-}" == "--set" ]]; then
+      selected="${2:-}"
+      found=false
+      for wallpaper in "${wallpapers[@]}"; do
+        [[ "$wallpaper" == "$selected" ]] && found=true && break
+      done
+      if [[ "$found" != true ]]; then
+        printf 'Wallpaper is not in %s: %s\n' "$wallpaper_dir" "$selected" >&2
+        exit 2
+      fi
+    elif [[ "${1:-}" == "apply" ]]; then
       if ((current_index < 0)); then
         selected="${wallpapers[0]}"
       else
@@ -69,7 +79,7 @@ case "${1:---status}" in
       else
         selected="${wallpapers[$(((current_index - 1 + ${#wallpapers[@]}) % ${#wallpapers[@]}))]}"
       fi
-    else
+    elif [[ "${1:-}" == "--next" ]]; then
       selected="${wallpapers[$(((current_index + 1) % ${#wallpapers[@]}))]}"
     fi
 
@@ -92,7 +102,7 @@ case "${1:---status}" in
     mv -f -- "$state_tmp" "$state_file"
     ;;
   *)
-    printf 'Usage: %s [--status|--next|--previous|apply]\n' "$0" >&2
+    printf 'Usage: %s [--status|--next|--previous|apply|--set IMAGE]\n' "$0" >&2
     exit 2
     ;;
 esac

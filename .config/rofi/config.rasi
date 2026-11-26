@@ -4,7 +4,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,clipboard:~/.config/rofi/scripts/clipboard.sh,ssh,window,filebrowser";
+	modi:                       "drun,run,clipboard:~/.config/rofi/scripts/clipboard.sh,ssh,window,filebrowser,wallpapers:~/.config/rofi/scripts/wallpapers.sh";
     show-icons:                 true;
     display-clipboard:          "";
     display-drun:               "";
@@ -12,6 +12,7 @@ configuration {
     display-ssh:                "";
     display-window:             "";
 	display-filebrowser:        "";
+	display-wallpapers:         "󰸉";
 	drun-display-format:        "{name}";
 
 }

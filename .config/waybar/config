@@ -4,7 +4,7 @@
   "height": 25,
   "spacing": 4,
   "modules-left": ["custom/power", "sway/workspaces", "group/scratch", "sway/mode", "custom/media"],
-  "modules-center": ["group/calendar", "group/tray", "idle_inhibitor", "custom/wallpaper", "custom/keyboard-layout"],
+  "modules-center": ["group/calendar", "group/tray", "idle_inhibitor", "custom/keyboard-layout"],
   "modules-right": [
     "group/sound",
     "group/system-monitor","bluetooth", "network", "backlight",
@@ -167,15 +167,6 @@
     "interval": 1,
     "format": "{}",
     "tooltip": true
-  },
-  "custom/wallpaper": {
-    "exec": "~/.config/waybar/scripts/wallpaper.sh --status",
-    "interval": 5,
-    "format": "󰸉",
-    "tooltip-format": "{}",
-    "max-length": 22,
-    "on-click": "~/.config/waybar/scripts/wallpaper.sh --next",
-    "on-click-right": "~/.config/waybar/scripts/wallpaper.sh --previous"
   },
   "group/battery1": {
     "orientation": "horizontal",

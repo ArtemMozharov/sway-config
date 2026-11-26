@@ -75,7 +75,7 @@ rsync -av .config/nvim/ ~/.config/nvim/
 cp .vimrc ~/.vimrc
 ```
 
-Waybar's wallpaper button cycles through image files in `~/Pictures/Wallpapers` (left-click next, right-click previous). Sway remembers the selected image across reloads, and each selection generates a blurred gtklock background with a 70% Tokyo Night base-color overlay. ImageMagick is used for that generated lockscreen image.
+The rofi `wallpapers` mode lets you choose an image from `~/Pictures/Wallpapers`. Sway remembers the selected image across reloads, and each selection generates a blurred gtklock background with a 70% Tokyo Night base-color overlay. ImageMagick is used for that generated lockscreen image.
 
 ## Install the GTK theme
 
